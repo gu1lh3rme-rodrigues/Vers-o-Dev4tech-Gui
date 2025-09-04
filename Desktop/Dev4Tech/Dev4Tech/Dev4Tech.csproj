@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39150AFB-B8AE-4ADE-8DAF-E26FC7F87C50}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dev4Tech</RootNamespace>
+    <AssemblyName>Dev4Tech</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net45\K4os.Compression.LZ4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net45\K4os.Compression.LZ4.Streams.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net45\K4os.Hash.xxHash.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.30.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\netstandard2.0\System.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\ZstdNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cs\AddEquipes.cs" />
+    <Compile Include="cs\AddTarefas.cs" />
+    <Compile Include="Adm\AdicionarEquipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm\AdicionarEquipes.Designer.cs">
+      <DependentUpon>AdicionarEquipes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\AvaliacaoTarefa.cs" />
+    <Compile Include="Adm\AvaliaçãoTarefaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm\AvaliaçãoTarefaAdmin.Designer.cs">
+      <DependentUpon>AvaliaçãoTarefaAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cad_login\Cadastro-empresa-admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cad_login\Cadastro-empresa-admin.Designer.cs">
+      <DependentUpon>Cadastro-empresa-admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cad_login\Cadastro-empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cad_login\Cadastro-empresa.Designer.cs">
+      <DependentUpon>Cadastro-empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cad_login\Cadastro-funcionário.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cad_login\Cadastro-funcionário.Designer.cs">
+      <DependentUpon>Cadastro-funcionário.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chat_geral_equipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat_geral_equipes.Designer.cs">
+      <DependentUpon>Chat_geral_equipes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\Chat_Mensagens.cs" />
+    <Compile Include="cs\conexao.cs" />
+    <Compile Include="Configuracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracoes.Designer.cs">
+      <DependentUpon>Configuracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adm\AdicionarTarefa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm\AdicionarTarefa.Designer.cs">
+      <DependentUpon>AdicionarTarefa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\empresaCadAdmin.cs" />
+    <Compile Include="cs\empresaCadFuncionario.cs" />
+    <Compile Include="cs\empresa.cs" />
+    <Compile Include="cs\EntregaTarefa.cs" />
+    <Compile Include="cs\EnvioProblema.cs" />
+    <Compile Include="Equipes_Estatisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipes_Estatisticas.Designer.cs">
+      <DependentUpon>Equipes_Estatisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\FiltroEquipes.cs" />
+    <Compile Include="Adm\HomeAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm\HomeAdm.Designer.cs">
+      <DependentUpon>HomeAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Integrantes_Equipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integrantes_Equipe.Designer.cs">
+      <DependentUpon>Integrantes_Equipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\LoginVerify.cs" />
+    <Compile Include="Home-Func\PesquisaEquipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home-Func\PesquisaEquipes.Designer.cs">
+      <DependentUpon>PesquisaEquipes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cad_login\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cad_login\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home-Func\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home-Func\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cad_login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cad_login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\PesquisaIntegrantes.cs" />
+    <Compile Include="Planejamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planejamento.Designer.cs">
+      <DependentUpon>Planejamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\pontuacaoUsuarios.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Home-Func\Ranking_Equipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home-Func\Ranking_Equipes.Designer.cs">
+      <DependentUpon>Ranking_Equipes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relato_Problema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relato_Problema.Designer.cs">
+      <DependentUpon>Relato_Problema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cs\Sessao.cs" />
+    <Compile Include="Tarefas\Tarefas_Atrasadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarefas\Tarefas_Atrasadas.Designer.cs">
+      <DependentUpon>Tarefas_Atrasadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarefas\Tarefas_Completadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarefas\Tarefas_Completadas.Designer.cs">
+      <DependentUpon>Tarefas_Completadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarefas\Tarefas_Pendentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarefas\Tarefas_Pendentes.Designer.cs">
+      <DependentUpon>Tarefas_Pendentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarefas\Tarefa_Enviada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarefas\Tarefa_Enviada.Designer.cs">
+      <DependentUpon>Tarefa_Enviada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarefas\Tela_Tarefa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarefas\Tela_Tarefa.Designer.cs">
+      <DependentUpon>Tela_Tarefa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adm\Tela_TarefasAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adm\Tela_TarefasAdmin.Designer.cs">
+      <DependentUpon>Tela_TarefasAdmin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adm\AdicionarEquipes.resx">
+      <DependentUpon>AdicionarEquipes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adm\AvaliaçãoTarefaAdmin.resx">
+      <DependentUpon>AvaliaçãoTarefaAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cad_login\Cadastro-empresa-admin.resx">
+      <DependentUpon>Cadastro-empresa-admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cad_login\Cadastro-empresa.resx">
+      <DependentUpon>Cadastro-empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cad_login\Cadastro-funcionário.resx">
+      <DependentUpon>Cadastro-funcionário.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat_geral_equipes.resx">
+      <DependentUpon>Chat_geral_equipes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracoes.resx">
+      <DependentUpon>Configuracoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adm\AdicionarTarefa.resx">
+      <DependentUpon>AdicionarTarefa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipes_Estatisticas.resx">
+      <DependentUpon>Equipes_Estatisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adm\HomeAdm.resx">
+      <DependentUpon>HomeAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integrantes_Equipe.resx">
+      <DependentUpon>Integrantes_Equipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home-Func\PesquisaEquipes.resx">
+      <DependentUpon>PesquisaEquipes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cad_login\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home-Func\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cad_login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planejamento.resx">
+      <DependentUpon>Planejamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Home-Func\Ranking_Equipes.resx">
+      <DependentUpon>Ranking_Equipes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relato_Problema.resx">
+      <DependentUpon>Relato_Problema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarefas\Tarefas_Atrasadas.resx">
+      <DependentUpon>Tarefas_Atrasadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarefas\Tarefas_Completadas.resx">
+      <DependentUpon>Tarefas_Completadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarefas\tarefas_Pendentes.resx">
+      <DependentUpon>Tarefas_Pendentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarefas\Tarefa_Enviada.resx">
+      <DependentUpon>Tarefa_Enviada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarefas\Tela_Tarefa.resx">
+      <DependentUpon>Tela_Tarefa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adm\Tela_TarefasAdmin.resx">
+      <DependentUpon>Tela_TarefasAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de tela 2025-04-04 151335.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 33 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 33 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_zScJU5qbomqig6_j2g3RzQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grafico-subindo-inflacao-ocde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-equip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-ranking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nav Icon Item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-EquipLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-enviarMensagem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-documento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-documento-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-documento-blue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-rank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-pasta-ranking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-estatistica-ranking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-ranking-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-ranking-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-ranking-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-estatistica-ranking1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tarefas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Design sem nome %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
